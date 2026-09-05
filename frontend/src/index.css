@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background-color: #070a12;
+  color: #f1f5f9;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070a12;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6366f1;
+}
+
+/* Glassmorphic card styling */
+.glass-panel {
+  background: rgba(12, 18, 32, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+}
+
+.glass-panel-glow {
+  background: rgba(12, 18, 32, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(6, 182, 212, 0.20);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+}
+
+.shadow-cyber-box {
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.45), 0 0 0 1px rgba(6,182,212,0.12), inset 0 0 20px 0 rgba(6,182,212,0.04);
+}
+
+.shadow-glow-cyan {
+  box-shadow: 0 0 30px -5px rgba(6, 182, 212, 0.45);
+}
+
+.shadow-glow-brand {
+  box-shadow: 0 0 30px -5px rgba(99, 102, 241, 0.45);
+}
+
+.shadow-glow-emerald {
+  box-shadow: 0 0 30px -5px rgba(16, 185, 129, 0.45);
+}
+
+.shadow-glow-rose {
+  box-shadow: 0 0 30px -5px rgba(244, 63, 94, 0.45);
+}
+
+.shadow-glow-amber {
+  box-shadow: 0 0 30px -5px rgba(245, 158, 11, 0.45);
+}
+
+.glass-panel-hover {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(23, 34, 59, 0.8);
+  border-color: rgba(6, 182, 212, 0.3);
+  box-shadow: 0 12px 35px -5px rgba(0, 0, 0, 0.6), 0 0 20px -3px rgba(6, 182, 212, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Cyber scanning line animation */
+@keyframes cyberScan {
+  0%   { top: 0%;   opacity: 0.9; }
+  50%  {            opacity: 1.0; }
+  100% { top: 100%; opacity: 0.2; }
+}
+
+.animate-cyber-scan {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #22d3ee, #818cf8, transparent);
+  box-shadow: 0 0 12px #22d3ee;
+  animation: cyberScan 3.5s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Floating animation */
+@keyframes floatingSoft {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+.animate-floating {
+  animation: floatingSoft 5s ease-in-out infinite;
+}
+
+/* Slow rotation */
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 20s linear infinite;
+}
+
+@keyframes spinReverseSlow {
+  from { transform: rotate(360deg); }
+  to   { transform: rotate(0deg); }
+}
+
+.animate-spin-reverse-slow {
+  animation: spinReverseSlow 28s linear infinite;
+}
+
+/* Futuristic pulsing badge beacon */
+@keyframes beaconPing {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.5); }
+  50%       { box-shadow: 0 0 0 8px rgba(6, 182, 212, 0); }
+}
+
+.animate-beacon {
+  animation: beaconPing 2s ease-in-out infinite;
+}
+
+
+
+/* Background Animation Elements */
+@keyframes floatOrb1 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(80px, 60px, 0) scale(1.15);
+  }
+  66% {
+    transform: translate3d(-50px, 100px, 0) scale(0.9);
+  }
+}
+
+@keyframes floatOrb2 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  40% {
+    transform: translate3d(-90px, -70px, 0) scale(1.2);
+  }
+  75% {
+    transform: translate3d(60px, -40px, 0) scale(0.85);
+  }
+}
+
+@keyframes floatOrb3 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(0.95);
+  }
+  50% {
+    transform: translate3d(70px, -90px, 0) scale(1.1);
+  }
+}
+
+@keyframes ambientPulse {
+  0%, 100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+
+.animate-orb-1 {
+  animation: floatOrb1 24s ease-in-out infinite, ambientPulse 8s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.animate-orb-2 {
+  animation: floatOrb2 28s ease-in-out infinite, ambientPulse 10s ease-in-out infinite 3s;
+  will-change: transform, opacity;
+}
+
+.animate-orb-3 {
+  animation: floatOrb3 32s ease-in-out infinite, ambientPulse 12s ease-in-out infinite 6s;
+  will-change: transform, opacity;
+}
+
+/* Subtle Dev Grid Texture */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.bg-dot-pattern {
+  background-size: 24px 24px;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+}
+
+/* Monaco container adjustments */
+.monaco-editor, .monaco-editor .overflow-guard {
+  border-radius: 0 0 0.5rem 0.5rem;
+}
